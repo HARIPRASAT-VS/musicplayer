@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>PC Music Player UI</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Arial, sans-serif;
+        }
+        body {
+            margin: 0;
+            height: 100vh;
+            background: linear-gradient(135deg, #1e2a47, #5f5c8a);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #fff;
+        }
+        .player {
+            width: 900px;
+            height: 500px;
+            display: flex;
+            background: rgba(0, 0, 0, 0.4);
+            backdrop-filter: blur(12px);
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.6);
+        }
+        .playlist {
+            width: 35%;
+            background: rgba(0, 0, 0, 0.5);
+            padding: 20px;
+            overflow-y: auto;
+            border-right: 2px solid rgba(255, 255, 255, 0.1);
+        }
+        .playlist h2 {
+            margin-bottom: 15px;
+            color: #00f5a0;
+        }
+        .song {
+            padding: 12px;
+            border-radius: 10px;
+            margin-bottom: 8px;
+            cursor: pointer;
+            transition: 0.3s;
+            display: flex;
+            justify-content: space-between;
+        }
+        .song:hover {
+            background: rgba(255, 255, 255, 0.15);
+        }
+        .song.active {
+            background: linear-gradient(135deg, #00f5a0, #00d9f5);
+            color: #020617;
+        }
+        .now-playing {
+            width: 65%;
+            padding: 30px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        .album {
+            width: 250px;
+            height: 250px;
+            border-radius: 20px;
+            background: linear-gradient(135deg, #00f5a0, #00d9f5, #8b5cf6);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 50px;
+            color: #020617;
+            margin-bottom: 20px;
+            background-image: url('https://via.placeholder.com/250'); /* Placeholder image */
+            background-size: cover;
+            background-position: center;
+        }
+        .info {
+            text-align: center;
+        }
+        .info h1 {
+            margin: 10px 0 5px;
+            font-size: 28px;
+        }
+        .info p {
+            margin: 0;
+            opacity: 0.8;
+        }
+        .progress {
+            width: 80%;
+            margin: 25px 0;
+        }
+        .bar {
+            height: 6px;
+            background: #1e293b;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+        .fill {
+            width: 60%;
+            height: 100%;
+            background: #00f5a0;
+            transition: width 0.1s ease-in-out;
+        }
+        .time {
+            display: flex;
+            justify-content: space-between;
+            font-size: 13px;
+            margin-top: 5px;
+            opacity: 0.8;
+        }
+        .controls {
+            display: flex;
+            gap: 25px;
+        }
+        .btn {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.2);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        .btn:hover {
+            background: #00f5a0;
+            color: #020617;
+            transform: scale(1.15);
+        }
+        .play {
+            width: 65px;
+            height: 65px;
+            background: #00f5a0;
+            color: #020617;
+            font-size: 24px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+        }
+    </style>
+</head>
+<body>
+    <div class="player">
+        <div class="playlist">
+            <h2>Playlist</h2>
+            <div class="song active">
+                <span>Adiye – Kadal</span>
+                <span>3:45</span>
+            </div>
+            <div class="song">
+                <span>Suttrum Vizhi – Ghajini</span>
+                <span>4:12</span>
+            </div>
+            <div class="song">
+                <span>Neela Vaanam – Manmadan Ambu</span>
+                <span>5:10</span>
+            </div>
+            <div class="song">
+                <span>Vaseegara – Minnale</span>
+                <span>4:58</span>
+            </div>
+            <div class="song">
+                <span>Munbe Vaa – Sillunu Oru Kadhal</span>
+                <span>5:40</span>
+            </div>
+            <div class="song">
+                <span>New York Nagaram</span>
+                <span>6:20</span>
+            </div>
+        </div>
+        <div class="now-playing">
+            <div class="album">🎵</div>
+            <div class="info">
+                <h1>Adiye</h1>
+                <p>Kadal • A.R. Rahman</p>
+            </div>
+            <div class="progress">
+                <div class="bar">
+                    <div class="fill"></div>
+                </div>
+                <div class="time">
+                    <span>1:52</span>
+                    <span>3:45</span>
+                </div>
+            </div>
+            <div class="controls">
+                <div class="btn">⏮</div>
+                <div class="btn play">▶</div>
+                <div class="btn">⏭</div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
